@@ -50,3 +50,10 @@ header nav a {
 header nav a:hover {
   color: #c89aff !important;
 }
+
+#worlds article:first-child img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+}
