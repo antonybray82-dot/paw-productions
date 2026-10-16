@@ -57,3 +57,9 @@ header nav a:hover {
   object-fit: contain !important;
   display: block;
 }
+
+#worlds article:first-child {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
