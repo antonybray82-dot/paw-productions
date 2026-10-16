@@ -51,26 +51,27 @@ header nav a:hover {
   color: #c89aff !important;
 }
 
-.worlds article:is(:first-child, :nth-child(2)) img {
+.worlds article:is(:first-child, :nth-child(2), :nth-child(3)) img {
+ 
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
   display: block;
 }
 
-.worlds article:is(:first-child, :nth-child(2)) {
+.worlds article:is(:first-child, :nth-child(2), :nth-child(3)) {
   height: auto !important;
   min-height: 0 !important;
   overflow: visible !important;
 }
 
 @media (max-width: 768px) {
-  .worlds article:is(:first-child, :nth-child(2)) {
+  .worlds article:is(:first-child, :nth-child(2), :nth-child(3)) {
     height: auto !important;
     min-height: 0 !important;
     overflow: hidden !important;
   }
-  .worlds article:is(:first-child, :nth-child(2)) > img {
+  .worlds article:is(:first-child, :nth-child(2), :nth-child(3)) img {
     position: static !important;
     width: 100% !important;
     height: auto !important;
