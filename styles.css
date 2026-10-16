@@ -63,3 +63,17 @@ header nav a:hover {
   min-height: 0 !important;
   overflow: visible !important;
 }
+
+@media (max-width: 768px) {
+  #worlds article:first-child {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  #worlds article:first-child > img {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}
