@@ -1,0 +1,66 @@
+/* Paw Productions — approved portal animation V17; scoped to the hero. */
+.hero-image{position:relative;overflow:hidden}
+.hero-image .portal-fx{position:absolute;pointer-events:none;z-index:1;overflow:visible}
+.hero-image .portal-fx .glow{fill:none;stroke:#b956ff;stroke-width:27;opacity:.70;filter:url(#blur);animation:halo 3.8s ease-in-out infinite}
+.hero-image .portal-fx .stream{fill:none;stroke:#fff1ff;stroke-width:11;stroke-linecap:round;stroke-dasharray:29 32 10 23 37 34;animation:flow 4.2s linear infinite;filter:url(#soft);opacity:1}
+.hero-image .portal-fx .stream.alt{stroke:#be52ff;stroke-width:17;stroke-dasharray:52 32 15 23;opacity:1;animation-duration:6.2s;animation-direction:reverse}
+.hero-image .portal-fx .particle{stroke-linejoin:round;fill:#fffaff;stroke:#e9b3ff;stroke-width:1.1;filter:drop-shadow(0px 0px 5px #c14cff);pointer-events:none}
+.hero-image .portal-fx .particle.violet{fill:#d98cff;stroke:#fff0ff}
+.hero-image .portal-fx .spark{fill:#f5c6ff;filter:url(#soft);animation:twinkle 3.4s ease-in-out infinite alternate}
+.hero-image .portal-fx .crystal{fill:url(#crystal);animation:pulse 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.hero-image .portal-fx .crystal:nth-of-type(2n){animation-delay:-2s}
+.hero-image .portal-fx .controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.hero-image .portal-fx button{background:#7e35ba;color:#fff;border:1px solid #b47adb;padding:11px 17px;border-radius:9px;font-weight:700;cursor:pointer}
+.hero-image .portal-fx button:hover{background:#9648d3}
+.hero-image .portal-fx .note{font-size:13px;color:#c8b9d6;margin-top:13px}
+.hero-image .portal-fx .paused .stream, .hero-image .portal-fx .paused .spark, .hero-image .portal-fx .paused .crystal, .hero-image .portal-fx .paused .glow{animation-play-state:paused}
+@keyframes flow{to{stroke-dashoffset:-550}}
+@keyframes pulse{0%,100%{opacity:.24;transform:scale(.85)}50%{opacity:.92;transform:scale(1.5)}}
+@keyframes halo{0%,100%{opacity:.55}50%{opacity:.95}}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+@media(prefers-reduced-motion:reduce){.hero-image .portal-fx .portal-particles{display:none}
+.hero-image .portal-fx .stream, .hero-image .portal-fx .spark, .hero-image .portal-fx .crystal, .hero-image .portal-fx .glow{animation:none;opacity:.25}}
+.hero-image .portal-fx .crystal-cluster{ transform-box: fill-box; transform-origin: center; }
+.hero-image .portal-fx .crystal-halo{ fill: #bd4cff; opacity: .12; filter: blur(13px); animation: crystalBreath var(--duration) ease-in-out var(--delay) infinite; transform-box: fill-box; transform-origin: center; }
+.hero-image .portal-fx .crystal-inner{ fill: #ec9aff; opacity: .12; filter: blur(7px); animation: crystalCore var(--duration) ease-in-out var(--delay) infinite; transform-box: fill-box; transform-origin: center; }
+.hero-image .portal-fx .crystal-glint{ fill: #fff4ff; opacity: .08; filter: blur(2px) drop-shadow(0 0 6px #d873ff); animation: crystalShine var(--duration) ease-in-out var(--delay) infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes crystalBreath { 0%,100% { opacity:.10; transform:scale(.78) } 48% {opacity:.76; transform:scale(1.18)} }
+@keyframes crystalCore { 0%,100% { opacity:.10; transform:scale(.76) } 48% {opacity:.86; transform:scale(1.14)} }
+@keyframes crystalShine { 0%,100% {opacity:.08;transform:scale(.8)} 48% {opacity:.92;transform:scale(1.06)} }
+.hero-image .portal-fx .paused .crystal-halo, .hero-image .portal-fx .paused .crystal-inner, .hero-image .portal-fx .paused .crystal-glint{ animation-play-state: paused; }
+@media(prefers-reduced-motion:reduce) {.hero-image .portal-fx .crystal-halo, .hero-image .portal-fx .crystal-inner, .hero-image .portal-fx .crystal-glint{ animation:none;opacity:.15; }}
+.hero-image .portal-fx .magic-dust{ pointer-events:none; }
+.hero-image .portal-fx .dust-mote{ fill:#efd0ff; filter:drop-shadow(0 0 6px #d78aff) drop-shadow(0 0 11px #a93cff); stroke:#f7ddff; stroke-width:.65px; animation:dustFloat var(--drift) ease-in-out var(--offset) infinite; }
+.hero-image .portal-fx .dust-mote.cool{ fill:#c47aff; }
+.hero-image .portal-fx .dust-mote.soft{ fill:#fff5ff; filter:drop-shadow(0 0 6px #f3cfff) drop-shadow(0 0 10px #b35aff); }
+@keyframes dustFloat { 0% { opacity:0; transform:translate(0,14px) scale(.65) } 18% {opacity:var(--brightness)} 52% {opacity:calc(var(--brightness) * .7);transform:translate(var(--sway),-19px) scale(1.05)} 82% {opacity:var(--brightness)} 100% {opacity:0;transform:translate(var(--end),-53px) scale(.55)} }
+.hero-image .portal-fx .paused .dust-mote{ animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce){.hero-image .portal-fx .magic-dust{display:none}}
+.hero-image .portal-fx .shooting-star{ pointer-events:none; opacity:0; animation:shootAcross 11s linear infinite; }
+.hero-image .portal-fx .shooting-tail{ fill:none; stroke:url(#shoot-tail); stroke-width:4; stroke-linecap:round; filter:drop-shadow(0 0 5px #d68aff); }
+.hero-image .portal-fx .shooting-core{ fill:#fffaff; stroke:#d99aff; stroke-width:1.4; filter:drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 12px #bc53ff); }
+@keyframes shootAcross { 0%,18%,31%,100% {opacity:0;transform:translate(0,0) scale(.85)} 19% {opacity:0;transform:translate(0,0) scale(.85)} 20% {opacity:1;transform:translate(25px,9px) scale(1)} 28% {opacity:1;transform:translate(355px,121px) scale(1)} 30% {opacity:0;transform:translate(405px,138px) scale(.9)} }
+.hero-image .portal-fx .paused .shooting-star{ animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce){.hero-image .portal-fx .shooting-star{display:none}}
+.hero-image .portal-fx .flying-ship{ pointer-events:none; opacity:0; animation:shipFlight 16s ease-in-out infinite; filter:drop-shadow(0 0 4px #ae53f5); }
+.hero-image .portal-fx .ship-lights{ animation:shipLights 1.2s ease-in-out infinite alternate; }
+.hero-image .portal-fx .ship-engine{ animation:engineGlow 1.7s ease-in-out infinite alternate; }
+@keyframes shipFlight {
+  0%,7% { opacity:0; transform:translate(1190px,155px) scale(.78); }
+  11% { opacity:1; transform:translate(1130px,148px) scale(.8); }
+  37% { opacity:1; transform:translate(830px,115px) scale(.94); }
+  58% { opacity:1; transform:translate(610px,145px) scale(.84); }
+  65%,100% { opacity:0; transform:translate(535px,133px) scale(.76); }
+}
+@keyframes shipLights { from {opacity:.35} to {opacity:1} }
+@keyframes engineGlow { from {opacity:.35;transform:scaleX(.75)} to {opacity:.9;transform:scaleX(1.12)} }
+.hero-image .portal-fx .paused .flying-ship, .hero-image .portal-fx .paused .ship-lights, .hero-image .portal-fx .paused .ship-engine{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.hero-image .portal-fx .flying-ship{display:none}}
+.hero-image .portal-fx .waterfall-ripples{pointer-events:none;mix-blend-mode:screen}
+.hero-image .portal-fx .waterfall-ripples .waterline{fill:none;stroke:#f7f0ff;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:11 23 20 32;opacity:.48;filter:drop-shadow(0 0 3px #f0d8ff);animation:waterfallFlow var(--water-speed,2.8s) linear infinite}
+.hero-image .portal-fx .waterfall-ripples .waterline.fine{stroke:#d6c5ec;stroke-width:2;stroke-dasharray:7 17 14 25;opacity:.38;animation-duration:var(--water-speed,3.3s);animation-delay:-1.3s}
+.hero-image .portal-fx .waterfall-ripples .waterglint{fill:#fff;opacity:.1;filter:blur(3px);animation:waterShimmer 3.1s ease-in-out infinite alternate}
+@keyframes waterfallFlow {to {stroke-dashoffset:-172}}
+@keyframes waterShimmer {to {opacity:.42}}
+.hero-image .portal-fx .paused .waterfall-ripples *{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.hero-image .portal-fx .waterfall-ripples .waterline, .hero-image .portal-fx .waterfall-ripples .waterglint{animation:none;opacity:.13}}
