@@ -86,3 +86,6 @@ header nav a:hover {
   aspect-ratio: auto !important;
   max-height: none !important;
 }
+.button.light {
+  color: #241438;
+}
