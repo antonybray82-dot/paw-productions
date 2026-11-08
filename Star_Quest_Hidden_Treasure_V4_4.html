@@ -39,7 +39,7 @@ const legacyChime=crystalChime,legacyBark=amosBark;
 function crystalSound(){clipSound('chime')}
 function barkSound(){clipSound('bark')}
 document.getElementById('testBark').addEventListener('click',()=>{if(!soundOn){soundOn=true;soundBtn.textContent='♫ SOUND ON';soundBtn.setAttribute('aria-pressed','true')}unlockAudio();barkSound();say('🐾 Testing Amos’s bark!')});
-document.getElementById('testAudio').addEventListener('click',()=>{
+document.getElementById('testAudio')?.addEventListener('click',()=>{
  if(!soundOn){soundOn=true;soundBtn.textContent='♫ SOUND ON';soundBtn.setAttribute('aria-pressed','true')}
  unlockAudio();clipSound('chime');say('🔊 Testing crystal chime — check your media volume!');
 });
