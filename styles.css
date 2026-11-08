@@ -119,3 +119,20 @@ header nav a:hover {
   box-shadow: 0 0 22px rgba(165, 100, 230, 0.65);
 }
 
+/* Match Star Quest Secrets button to arcade */
+#secrets .button.light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 480px);
+  min-height: 76px;
+  margin: 0 auto 20px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease;
+}
+
+#secrets .button.light:hover,
+#secrets .button.light:focus-visible {
+  box-shadow: 0 0 22px rgba(165, 100, 230, 0.65);
+}
