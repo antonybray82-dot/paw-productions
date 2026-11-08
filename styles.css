@@ -89,3 +89,33 @@ header nav a:hover {
 .button.light {
   color: #241438;
 }
+
+/* Paw Productions arcade improvements */
+#arcade {
+  padding-bottom: 32px;
+}
+
+#arcade .arcade-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 28px;
+  letter-spacing: 2px;
+}
+
+#arcade .button.light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 480px);
+  min-height: 76px;
+  margin: 0 auto 20px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease;
+}
+
+#arcade .button.light:hover,
+#arcade .button.light:focus-visible {
+  box-shadow: 0 0 22px rgba(165, 100, 230, 0.65);
+}
+
